@@ -207,6 +207,7 @@ def generate_canny_to_image():
     
 # create seg2image endpoint
 @app.route('/generate/seg_to_image', methods=['POST'])
+def generate_seg_to_image():
     input_image = request.form['input_image']
     prompt = request.form['prompt']
     a_prompt = request.form['a_prompt']

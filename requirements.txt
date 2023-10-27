@@ -8,5 +8,7 @@ invisible-watermark
 
 einops
 gradio
-pytorch_lightning
+pytorch_lightning==1.5.0
 omegaconf
+torchvision
+open_clip_torch
