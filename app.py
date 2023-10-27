@@ -207,6 +207,20 @@ def generate_canny_to_image():
     
 # create seg2image endpoint
 @app.route('/generate/seg_to_image', methods=['POST'])
+    input_image = request.form['input_image']
+    prompt = request.form['prompt']
+    a_prompt = request.form['a_prompt']
+    n_prompt = request.form['n_prompt']
+    num_samples = request.form['num_samples']
+    image_resolution = request.form['image_resolution']
+    detect_resolution = request.form['detect_resolution']
+    ddim_steps = request.form['ddim_steps']
+    guess_mode = request.form['guess_mode']
+    strength = request.form['strength']
+    scale = request.form['scale']
+    seed = request.form['seed']
+    eta = request.form['eta']
+
     with torch.no_grad():
         input_image = HWC3(input_image)
         detected_map = apply_uniformer(resize_image(input_image, detect_resolution))
